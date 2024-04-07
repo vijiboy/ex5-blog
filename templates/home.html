@@ -1,12 +1,10 @@
-{% extends 'base.html' %}
+{% extends 'home_base.html' %}
 
-{% block content %}
-{% if user.is_authenticated %}
-    {% for post in post_list %}
+{% block homecontent %}
+{% for post in post_list %}
     <div class="post-entry">
         <h2><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h2>
         <p>{{ post.body }}</p>
     </div>
-    {% endfor %}
-{% endif %}
-{% endblock content %}
+{% endfor %}
+{% endblock homecontent %}
